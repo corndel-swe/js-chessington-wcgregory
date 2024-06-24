@@ -13,29 +13,20 @@ export default class Rook {
     // the list of valid moves
     let moves = []
 
-    // Move along the rows, up the rows
     for (let idx = 1; idx <= 7; idx++) {
+      // Move along the rows, up the rows
       if (location.row + idx <= 7) {  
         moves.push(new Square(location.row + idx, location.col))
       }
-    }
-
-    // Move along the rows, down the rows
-    for (let idx = 1; idx <= 7; idx++) {
+      // Move along the rows, down the rows
       if (location.row - idx >= 0) {  
         moves.push(new Square(location.row - idx, location.col))
       }
-    }
-
-    // Move along the columns, up the columns
-    for (let idx = 1; idx <= 7; idx++) {
+      // Move along the columns, up the columns
       if (location.col + idx <= 7) {
         moves.push(new Square(location.row, location.col + idx))
       }
-    }
-
-    // Move along the columns, down the columns
-    for (let idx = 1; idx <= 7; idx++) {
+      // Move along the columns, down the columns
       if (location.col - idx >= 0 ) {
         moves.push(new Square(location.row, location.col - idx))
       }

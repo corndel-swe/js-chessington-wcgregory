@@ -14,21 +14,37 @@ export default class Knight {
     let moves = []
 
     // can move "north-east" as a knight up 2 right 1
-    moves.push(new Square(location.row + 2, location.col + 1))
+    if (location.row + 2 <= 7 && location.col + 1 <= 7) {
+      moves.push(new Square(location.row + 2, location.col + 1))
+    }
     // can move "north-east" as a knight up 1 right 2
-    moves.push(new Square(location.row + 1, location.col + 2))
+    if (location.row + 1 <= 7 && location.col + 2 <= 7) {
+      moves.push(new Square(location.row + 1, location.col + 2))
+    }
     // can move "south-east" as a knight down 2 right 1
-    moves.push(new Square(location.row - 2, location.col + 1))
+    if (location.row - 2 >= 0 && location.col + 1 <= 7) {
+      moves.push(new Square(location.row - 2, location.col + 1))
+    }
     // can move "south-east" as a knight down 1 right 2
-    moves.push(new Square(location.row - 1, location.col + 2))
+    if (location.row - 1 >= 0 && location.col + 2 <= 7) {
+      moves.push(new Square(location.row - 1, location.col + 2))
+    }
     // can move "south-west" as a knight down 2 left 1
-    moves.push(new Square(location.row - 2, location.col - 1))
+    if (location.row - 2 >= 0 && location.col - 1 >= 0) {
+      moves.push(new Square(location.row - 2, location.col - 1))
+    }
     // can move "south-west" as a knight down 1 left 2
-    moves.push(new Square(location.row - 1, location.col - 2))
+    if (location.row - 1 >= 0 && location.col - 2 >= 0) {
+      moves.push(new Square(location.row - 1, location.col - 2))
+    }
     // can move "north-west" as a knight up 2 left 1
-    moves.push(new Square(location.row + 2, location.col - 1))
+    if (location.row + 2 <= 7 && location.col - 1 >= 0) {
+      moves.push(new Square(location.row + 2, location.col - 1))
+    }
     // can move "north-west" as a knight up 1 left 2
-    moves.push(new Square(location.row + 1, location.col - 2))
+    if (location.row + 1 <= 7 && location.col - 2 >= 0) {
+      moves.push(new Square(location.row + 1, location.col - 2))
+    }
 
     return moves
   }
