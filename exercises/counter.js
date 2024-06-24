@@ -2,8 +2,8 @@
 class Counter {
   #count  // private property
 
-  constructor (startingCountInt) {
-    this.#count = startingCountInt ? startingCountInt : 0
+  constructor (startingCount) {
+    this.#count = Number(startingCount) ? Number(startingCount) : 0
   }
 
   increment() {
