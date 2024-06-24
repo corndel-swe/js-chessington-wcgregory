@@ -35,7 +35,7 @@ all classes.
 - [x] Choose a piece, and work on its `getAvailableMoves` method to make its
       tests pass.
 
-- [ ] Move onto a new piece, and keep going until all non-pending tests are
+- [x] Move onto a new piece, and keep going until all non-pending tests are
       passing.
 
 ## Moving on
