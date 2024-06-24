@@ -37,11 +37,11 @@ current count.
 
 Have a go implementing the following methods:
 
-- [ ] `increment()`, which adds one to `count`
+- [x] `increment()`, which adds one to `count`
 
-- [ ] `reset()`, which sets `count` to `0`
+- [x] `reset()`, which sets `count` to `0`
 
-- [ ] `getCount()`, which returns the current `count`
+- [x] `getCount()`, which returns the current `count`
 
 ## Exercise 3: Private properties
 
@@ -50,7 +50,7 @@ Finally, read about
 
 You can run the tests for this exercise using `npm run test:d1e3`.
 
-- [ ] Refactor the `count` property to be private, so that it's hidden from
+- [x] Refactor the `count` property to be private, so that it's hidden from
       outside the class.
 
 ## Extensions
