@@ -20,7 +20,7 @@ all classes.
 
 ## First steps
 
-- [ ] Run
+- [x] Run
 
       ```bash
       npm run test
@@ -28,11 +28,11 @@ all classes.
 
       This will run tests for all the pieces.
 
-- [ ] Read the output to get a sense of the specification. You will notice that
+- [x] Read the output to get a sense of the specification. You will notice that
       some tests are "pending". To begin with, we will only focus on the tests
       which are not pending.
 
-- [ ] Choose a piece, and work on its `getAvailableMoves` method to make its
+- [x] Choose a piece, and work on its `getAvailableMoves` method to make its
       tests pass.
 
 - [ ] Move onto a new piece, and keep going until all non-pending tests are

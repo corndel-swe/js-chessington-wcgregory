@@ -7,7 +7,37 @@ export default class Bishop {
   }
 
   getAvailableMoves(board) {
-    return []
+    // get the square currently occupied by the pawn
+    let location = board.findPiece(this)
+    
+    // the list of valid moves
+    let moves = []
+
+    for (let idx = 1; idx <= 7; idx++) {
+      if (location.row + idx <= 7 && location.col + idx <= 7 ) {  
+        moves.push(new Square(location.row + idx, location.col + idx))
+      }
+    }
+
+    for (let idx = 1; idx <= 7; idx++) {
+      if (location.row - idx >= 0 && location.col + idx <= 7 ) {
+        moves.push(new Square(location.row - idx, location.col + idx))
+      }
+    }
+
+    for (let idx = 1; idx <= 7; idx++) {
+      if (location.row - idx >= 0 && location.col - idx >= 0 ) {
+        moves.push(new Square(location.row - idx, location.col - idx))
+      }
+    }
+
+    for (let idx = 1; idx <= 7; idx++) {
+      if (location.row + idx <= 7 && location.col - idx >= 0 ) {
+        moves.push(new Square(location.row + idx, location.col - idx))
+      }
+    }
+
+    return moves
   }
 
   moveTo(board, newSquare) {
