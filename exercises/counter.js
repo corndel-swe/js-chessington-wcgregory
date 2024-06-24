@@ -1,20 +1,24 @@
 // Make your Counter class here
 class Counter {
-  // implementation here
+  #count  // private property
+
   constructor (startingCountInt) {
-    this.count = startingCountInt ? startingCountInt : 0
+    this.#count = startingCountInt ? startingCountInt : 0
   }
 
   increment() {
-    this.count++
+    this.#count++
   }
 
   reset() {
-    this.count = 0
+    this.setCount(0)
   }
 
+  setCount(intValue) {
+    this.#count = Number(intValue) ? Number(intValue) : 0
+  }
   getCount() {
-    return this.count
+    return this.#count
   }
 
 }
