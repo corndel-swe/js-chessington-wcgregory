@@ -14,15 +14,15 @@ To run the tests for this exercise, run `npm run test:d1e1` in your terminal.
 
 Your instructions are to:
 
-- [ ] Open up `exercises/counter.js` and create a new class called `Counter`.
+- [x] Open up `exercises/counter.js` and create a new class called `Counter`.
 
 > [!NOTE]
 >
 > Make sure your class name has a capital `C`
 
-- [ ] Give it a constructor that initialises `count` to `0`
+- [x] Give it a constructor that initialises `count` to `0`
 
-- [ ] Assign the variable `counterInstance` below to an instance of your counter
+- [x] Assign the variable `counterInstance` below to an instance of your counter
       class.
 
 ## Exercise 2: Instance methods
