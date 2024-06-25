@@ -1,9 +1,10 @@
 import Square from '../square.js'
 import Piece from './piece.js'
 
-export default class Bishop {
+export default class Bishop extends Piece {
+
   constructor(player) {
-    this.player = player
+    super(player)
   }
 
   getAvailableMoves(board) {
@@ -14,24 +15,19 @@ export default class Bishop {
     let moves = []
 
     for (let idx = 1; idx <= 7; idx++) {
+      // moves available in "north-east" direction
       if (location.row + idx <= 7 && location.col + idx <= 7) {  
         moves.push(new Square(location.row + idx, location.col + idx))
       }
-    }
-
-    for (let idx = 1; idx <= 7; idx++) {
+      // moves available in "south-east" direction
       if (location.row - idx >= 0 && location.col + idx <= 7) {
         moves.push(new Square(location.row - idx, location.col + idx))
       }
-    }
-
-    for (let idx = 1; idx <= 7; idx++) {
+      // moves available in "south-west" direction
       if (location.row - idx >= 0 && location.col - idx >= 0) {
         moves.push(new Square(location.row - idx, location.col - idx))
       }
-    }
-
-    for (let idx = 1; idx <= 7; idx++) {
+      // moves available in "north-west" direction
       if (location.row + idx <= 7 && location.col - idx >= 0) {
         moves.push(new Square(location.row + idx, location.col - idx))
       }
@@ -39,9 +35,5 @@ export default class Bishop {
 
     return moves
   }
-
-  moveTo(board, newSquare) {
-    const currentSquare = board.findPiece(this)
-    board.movePiece(currentSquare, newSquare)
-  }
+  
 }

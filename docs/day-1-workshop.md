@@ -44,13 +44,13 @@ If you take a look at the some of the `.spec.js` files under the
 `tests/models/pieces/` directory, you'll see that there are some tests that are
 currently being skipped (they have `xit` instead of `it`).
 
-- [ ] Choose a piece and pick the first `xit` to un-skip. You can do this by
+- [x] Choose a piece and pick the first `xit` to un-skip. You can do this by
       deleting the `x` and leaving the `it`. Un-skip both the white version of
       the test and the black version of the test.
 
-- [ ] Run the tests again, you should see a pair of failing tests!
+- [x] Run the tests again, you should see a pair of failing tests!
 
-- [ ] Now that you have some failing tests, once again, try to write some code
+- [x] Now that you have some failing tests, once again, try to write some code
       to make them pass!
 
 - [ ] When you make them pass, pick another piece and/or another test to un-skip

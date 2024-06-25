@@ -32,7 +32,7 @@ describe('Pawn', () => {
       assert(moves.some(square => square.equals(new Square(3, 7))))
     })
 
-    xit('cannot move at the top of the board', () => {
+    it('cannot move at the top of the board', () => {
       const pawn = new Pawn(Player.WHITE)
       board.setPiece(new Square(7, 3), pawn)
 
@@ -127,7 +127,7 @@ describe('Pawn', () => {
       assert(moves.some(square => square.equals(new Square(5, 7))))
     })
 
-    xit('cannot move at the bottom of the board', () => {
+    it('cannot move at the bottom of the board', () => {
       const pawn = new Pawn(Player.BLACK)
       board.setPiece(new Square(0, 3), pawn)
 
