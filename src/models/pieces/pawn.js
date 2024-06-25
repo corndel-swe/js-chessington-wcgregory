@@ -18,14 +18,14 @@ export default class Pawn extends Piece {
       // white pawns can move "up" by two if at row poition 1
       if (location.row === 1) {
         let newLocation = new Square(location.row + 2, location.col)
-        if (!board.getPiece(newLocation)) {
+        if (!board.getPiece(newLocation)) {  // ignore if space is occupied
           moves.push(newLocation)
         }
       }
       // white pawns can move "up" by one, except at the "top" of board
       if (location.row < 7) {
         let newLocation = new Square(location.row + 1, location.col)
-        if (!board.getPiece(newLocation)) {
+        if (!board.getPiece(newLocation)) {  // ignore if space is occupied
           moves.push(newLocation)
         }
       }
@@ -33,16 +33,16 @@ export default class Pawn extends Piece {
       // black pawns can move "down" by one, except at the "bottom" of board
       if (location.row > 0) {
         let newLocation = new Square(location.row - 1, location.col)
-        if (!board.getPiece(newLocation)) {
+        if (!board.getPiece(newLocation)) {  // ignore if space is occupied
           moves.push(newLocation)
         }
       }
       // black pawns can move "down" by two if at row poition 6
       if (location.row === 6) {
         let newLocation = new Square(location.row - 2, location.col)
-        if (!board.getPiece(newLocation)) {
+        if (!board.getPiece(newLocation)) {  // ignore if space is occupied
           moves.push(newLocation)
-        }
+        } else console.log(board.getPiece(newLocation))
       }
     }
 
