@@ -4,6 +4,7 @@ import Board from '../../../src/models/board.js'
 import Player from '../../../src/models/player.js'
 import Square from '../../../src/models/square.js'
 import King from '../../../src/models/pieces/king.js'
+import Rook from '../../../src/models/pieces/rook.js'
 
 describe('Pawn', () => {
   let board
@@ -41,7 +42,7 @@ describe('Pawn', () => {
       assert.equal(moves.length, 0)
     })
 
-    xit('cannot move if there is a piece in front', () => {
+    it('cannot move if there is a piece in front', () => {
       const pawn = new Pawn(Player.WHITE)
       const blockingPiece = new Rook(Player.BLACK)
       board.setPiece(new Square(5, 3), pawn)
@@ -52,7 +53,7 @@ describe('Pawn', () => {
       assert.equal(moves.length, 0)
     })
 
-    xit('cannot move two squares if there is a piece two sqaures in front', () => {
+    it('cannot move two squares if there is a piece two sqaures in front', () => {
       const pawn = new Pawn(Player.WHITE)
       const blockingPiece = new Rook(Player.BLACK)
       board.setPiece(new Square(1, 3), pawn)
@@ -136,7 +137,7 @@ describe('Pawn', () => {
       assert.equal(moves.length, 0)
     })
 
-    xit('cannot move if there is a piece in front', () => {
+    it('cannot move if there is a piece in front', () => {
       const pawn = new Pawn(Player.BLACK)
       const blockingPiece = new Rook(Player.WHITE)
       board.setPiece(new Square(6, 3), pawn)
@@ -147,7 +148,7 @@ describe('Pawn', () => {
       assert.equal(moves.length, 0)
     })
 
-    xit('cannot move two squares if there is a piece two sqaures in front', () => {
+    it('cannot move two squares if there is a piece two sqaures in front', () => {
       const pawn = new Pawn(Player.BLACK)
       const blockingPiece = new Rook(Player.WHITE)
       board.setPiece(new Square(6, 3), pawn)

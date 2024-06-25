@@ -12,25 +12,37 @@ export default class Pawn extends Piece {
     let location = board.findPiece(this)
 
     // the list of valid moves
-    let moves = []
+    const moves = Array()
 
     if (this.player === Player.WHITE) {
       // white pawns can move "up" by two if at row poition 1
       if (location.row === 1) {
-        moves.push(new Square(location.row + 2, location.col))
+        let newLocation = new Square(location.row + 2, location.col)
+        if (!board.getPiece(newLocation)) {
+          moves.push(newLocation)
+        }
       }
       // white pawns can move "up" by one, except at the "top" of board
-      if (location.row !== 7) {
-        moves.push(new Square(location.row + 1, location.col))
+      if (location.row < 7) {
+        let newLocation = new Square(location.row + 1, location.col)
+        if (!board.getPiece(newLocation)) {
+          moves.push(newLocation)
+        }
       }
     } else {
       // black pawns can move "down" by one, except at the "bottom" of board
-      if (location.row !== 0) {
-        moves.push(new Square(location.row - 1, location.col))
+      if (location.row > 0) {
+        let newLocation = new Square(location.row - 1, location.col)
+        if (!board.getPiece(newLocation)) {
+          moves.push(newLocation)
+        }
       }
       // black pawns can move "down" by two if at row poition 6
       if (location.row === 6) {
-        moves.push(new Square(location.row - 2, location.col))
+        let newLocation = new Square(location.row - 2, location.col)
+        if (!board.getPiece(newLocation)) {
+          moves.push(newLocation)
+        }
       }
     }
 
