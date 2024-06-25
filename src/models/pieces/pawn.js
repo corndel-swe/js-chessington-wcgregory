@@ -30,16 +30,20 @@ export default class Pawn extends Piece {
         }
       }
     } else {
-      // black pawns can move "down" by one, except at the "bottom" of board
-      if (location.row > 0) {
+      // black pawns can move "down" by two if at row poition 6
+      if (location.row === 6) {
         let newLocation = new Square(location.row - 1, location.col)
         if (!board.getPiece(newLocation)) {  // ignore if space is occupied
           moves.push(newLocation)
-        } else console.log(board.getPiece(newLocation))
+        }
+        // let startTwoMove = new Square(location.row - 2, location.col)
+        // if (!board.getPiece(startTwoMove)) {  // ignore if space is occupied
+        //  moves.push(startTwoMove)
+        // }
       }
-      // black pawns can move "down" by two if at row poition 6
-      if (location.row === 6) {
-        let newLocation = new Square(location.row - 2, location.col)
+      // black pawns can move "down" by one, except at the "bottom" of board
+      if (location.row > 0) {
+        let newLocation = new Square(location.row - 1, location.col)
         if (!board.getPiece(newLocation)) {  // ignore if space is occupied
           moves.push(newLocation)
         }
