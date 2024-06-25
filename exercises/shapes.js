@@ -77,7 +77,6 @@ export class Circle extends Shape {
   constructor(radius) {
     super()
     this.#radius = radius
-    this.PI = 3.14
   }
 
   radius() {
@@ -86,7 +85,7 @@ export class Circle extends Shape {
 
   area() {
     // A = PI * r squared
-    return this.PI * (this.#radius * this.#radius)
+    return Circle.PI * (this.#radius * this.#radius)
   }
 
   perimeter() {
