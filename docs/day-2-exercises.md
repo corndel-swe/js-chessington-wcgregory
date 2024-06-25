@@ -34,16 +34,16 @@ Let's start off by reading the documentation on
 Since a `Square` is a special type of `Rectangle`, let's make `Square` _inherit
 from_ `Rectangle`.
 
-- [ ] Use the `extends` keyword in the class definition to make `Square` a
+- [x] Use the `extends` keyword in the class definition to make `Square` a
       subclass of `Rectangle`
 
-- [ ] We also need to call `super` in the constructor of `Square` to call the
+- [x] We also need to call `super` in the constructor of `Square` to call the
       constructor of `Rectangle` and set the `width` and `height` properties.
 
-- [ ] Are there any functions we can remove from `Square` that are already
+- [x] Are there any functions we can remove from `Square` that are already
       defined in `Rectangle`?
 
-- [ ] Do we need `#side` anymore if we're using `#width` and `#height`?
+- [x] Do we need `#side` anymore if we're using `#width` and `#height`?
 
 ## Exercise 3: Method overriding
 
