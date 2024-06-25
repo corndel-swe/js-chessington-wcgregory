@@ -13,10 +13,10 @@ Read the docs about
 
 To run the tests for this exercise, run `npm run test:d2e1` in your terminal.
 
-- [ ] Add a static property `PI` to `Maths`. The value of `Maths.PI` should be
+- [x] Add a static property `PI` to `Maths`. The value of `Maths.PI` should be
       `3.14`.
 
-- [ ] Add the static method `Maths.max(a, b)`, which returns the largest of `a`
+- [x] Add the static method `Maths.max(a, b)`, which returns the largest of `a`
       and `b`.
 
 ## Exercise 2: Inheritance
