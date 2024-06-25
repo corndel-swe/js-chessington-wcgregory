@@ -32,11 +32,11 @@ export class Square extends Rectangle {
 
 }
 
-//const mySquare = new Square(2)
-//console.log(mySquare.area())
-//console.log(mySquare.perimeter())
-//console.log(mySquare.width())
-//console.log(mySquare.height())
+// const mySquare = new Square(2)
+// console.log(mySquare.area())
+// console.log(mySquare.perimeter())
+// console.log(mySquare.width())
+// console.log(mySquare.height())
 
-//mySquare.side = 3
-//console.log(mySquare.width())
+// mySquare.side = 3
+// console.log(mySquare.width())

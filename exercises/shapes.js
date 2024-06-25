@@ -11,11 +11,12 @@ export class Shape {
 // Exercise 3: Make Rectangle, Triangle, and Circle child classes of Shape
 // And override the getArea and getPerimeter methods
 
-export class Rectangle {
+export class Rectangle extends Shape {
   #width
   #height
 
   constructor(width, height) {
+    super()
     this.#width = width
     this.#height = height
   }
@@ -37,11 +38,12 @@ export class Rectangle {
   }
 }
 
-export class RightTriangle {
+export class RightTriangle extends Shape {
   #base
   #height
 
   constructor(base, height) {
+    super()
     this.#base = base
     this.#height = height
   }
@@ -57,16 +59,48 @@ export class RightTriangle {
   hypotenuse() {
     return Math.sqrt(this.#base ** 2 + this.#height ** 2)
   }
+
+  area() {
+    return (this.#base * this.#height) / 2
+  }
+
+  perimeter() {
+    return this.#base + this.#height + this.hypotenuse()
+  }
+
 }
 
-export class Circle {
+export class Circle extends Shape {
+  static PI = 3.14
   #radius
 
   constructor(radius) {
+    super()
     this.#radius = radius
+    this.PI = 3.14
   }
 
   radius() {
     return this.#radius
   }
+
+  area() {
+    // A = PI * r squared
+    return this.PI * (this.#radius * this.#radius)
+  }
+
+  perimeter() {
+    // perimeter/circumference = 2 * PI * r
+    return 2 * Circle.PI * this.#radius
+  }
+
 }
+
+// const myRect = new Rectangle(2, 4)
+// console.log(myRect.area())
+
+// const myTri = new RightTriangle(2, 4)
+// console.log(myTri.area())
+
+// const myCir = new Circle(5)
+// console.log(myCir.area())
