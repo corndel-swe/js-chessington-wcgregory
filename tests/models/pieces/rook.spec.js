@@ -56,7 +56,7 @@ describe('Rook', () => {
     const moves = rook.getAvailableMoves(board)
 
     assert(
-      !moves.some(square => equare.equals(new Square(4, 7))),
+      !moves.some(square => square.equals(new Square(4, 7))),
       '`moves` contains the square (4, 7)'
     )
   })
