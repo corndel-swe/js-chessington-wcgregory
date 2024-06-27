@@ -15,38 +15,43 @@ export default class Pawn extends Piece {
     const moves = Array()
 
     if (this.player === Player.WHITE) {
-      // white pawns can move "up" by two if at row poition 1
-      // TODO: need to add 2 move conditional logic - same as below - applied to black pawn
+      // white pawns can move "up" by two if at row poition 1, but not if space is occupied
       if (location.row === 1) {
-        let newLocation = new Square(location.row + 2, location.col)
-        if (!board.getPiece(newLocation)) {  // ignore if space is occupied
-          moves.push(newLocation)
+        if (
+          !board.getPiece(new Square(location.row + 1, location.col)) &&
+          !board.getPiece(new Square(location.row + 2, location.col))
+        ) {
+          moves.push(new Square(location.row + 1, location.col))
+          moves.push(new Square(location.row + 2, location.col))
+        
+        } else if (!board.getPiece(new Square(location.row + 1, location.col))) {
+          moves.push(new Square(location.row + 1, location.col))
+        }
+      // white pawns can move "up" by one, except at the "top" of board (row 7) and not if space is occupied
+      } else if (location.row < 7) {
+        
+        if (!board.getPiece(new Square(location.row + 1, location.col))) {
+          moves.push(new Square(location.row + 1, location.col))
         }
       }
-      // white pawns can move "up" by one, except at the "top" of board
-      if (location.row < 7) {
-        let newLocation = new Square(location.row + 1, location.col)
-        if (!board.getPiece(newLocation)) {  // ignore if space is occupied
-          moves.push(newLocation)
-        }
-      }
+    // this.player !== player.WHITE
     } else {
       // black pawns can move "down" by one or two if at row position 6, but not if space is occupied
       if (location.row === 6) {
+
         if (
           !board.getPiece(new Square(location.row - 1, location.col)) &&
           !board.getPiece(new Square(location.row - 2, location.col))
         ) {
           moves.push(new Square(location.row - 1, location.col))
           moves.push(new Square(location.row - 2, location.col))
-        } else if (
-          !board.getPiece(new Square(location.row - 1, location.col))
-        ) { 
+
+        } else if (!board.getPiece(new Square(location.row - 1, location.col))) {
           moves.push(new Square(location.row - 1, location.col))
         }
       // else can move "down" by one if not at bottom of board (row 0) and not if space is occupied
       } else if (location.row > 0) {
-      // if (location.row !== 6 && location.row > 0) {
+
         if (!board.getPiece(new Square(location.row - 1, location.col))) {  
           moves.push(new Square(location.row - 1, location.col))
         }
