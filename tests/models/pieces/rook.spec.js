@@ -47,7 +47,7 @@ describe('Rook', () => {
     assert.equal(moves.length, 14, '`moves` does not have length 14')
   })
 
-  xit('cannot move through friendly pieces', () => {
+  it('cannot move through friendly pieces', () => {
     const rook = new Rook(Player.WHITE)
     const friendlyPiece = new Pawn(Player.WHITE)
     board.setPiece(new Square(4, 4), rook)
