@@ -30,26 +30,28 @@ export default class Pawn extends Piece {
         }
       }
     } else {
-      // black pawns can move "down" by two if at row poition 6
+      // black pawns can move "down" by one or two if at row position 6, but not if space is occupied
       if (location.row === 6) {
-        let newLocation = new Square(location.row - 1, location.col)
-        if (!board.getPiece(newLocation)) {  // ignore if space is occupied
-          moves.push(newLocation)
+        if (
+          !board.getPiece(new Square(location.row - 1, location.col)) &&
+          !board.getPiece(new Square(location.row - 2, location.col))
+        ) {
+          moves.push(new Square(location.row - 1, location.col))
+          moves.push(new Square(location.row - 2, location.col))
+        } else if (
+          !board.getPiece(new Square(location.row - 1, location.col))
+        ) { 
+          moves.push(new Square(location.row - 1, location.col))
         }
-        // let startTwoMove = new Square(location.row - 2, location.col)
-        // if (!board.getPiece(startTwoMove)) {  // ignore if space is occupied
-        //  moves.push(startTwoMove)
-        // }
-      }
-      // black pawns can move "down" by one, except at the "bottom" of board
-      if (location.row > 0) {
-        let newLocation = new Square(location.row - 1, location.col)
-        if (!board.getPiece(newLocation)) {  // ignore if space is occupied
-          moves.push(newLocation)
+      // else can move "down" by one if not at bottom of board (row 0) and not if space is occupied
+      } else if (location.row > 0) {
+      // if (location.row !== 6 && location.row > 0) {
+        if (!board.getPiece(new Square(location.row - 1, location.col))) {  
+          moves.push(new Square(location.row - 1, location.col))
         }
       }
     }
-
+    // if (this.player === Player.BLACK) console.log(moves)
     return moves
   }
   
