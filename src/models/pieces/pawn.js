@@ -16,6 +16,7 @@ export default class Pawn extends Piece {
 
     if (this.player === Player.WHITE) {
       // white pawns can move "up" by two if at row poition 1
+      // TODO: need to add 2 move conditional logic - same as below - applied to black pawn
       if (location.row === 1) {
         let newLocation = new Square(location.row + 2, location.col)
         if (!board.getPiece(newLocation)) {  // ignore if space is occupied
