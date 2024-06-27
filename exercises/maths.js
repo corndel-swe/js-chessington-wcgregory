@@ -1,4 +1,4 @@
-export class Maths {
+export default class Maths {
   
 	// static property PI
   static PI = 3.14

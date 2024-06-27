@@ -6,22 +6,22 @@ in the module work as expected.
 
 We'll use the `mocha` testing framework to write and run our tests.
 
-- [ ] Have a read of the
+- [x] Have a read of the
       [Unit Testing with Mocha](https://tech-docs.corndel.com/js/testing-with-mocha.html)
       documentation to get an idea of how to use `mocha`.
 
 There's an empty file called `maths.test.js` in the `tests` directory. We'll
 write our tests here.
 
-- [ ] Write a test that ensures `Maths.PI` is present in the `Maths` class, and
+- [x] Write a test that ensures `Maths.PI` is present in the `Maths` class, and
       ensure it is equal to `3.14`.
 
-- [ ] Write a test that checks that `Maths.max` returns the largest of two
+- [x] Write a test that checks that `Maths.max` returns the largest of two
       numbers. - No need to be too fancy with this test. Just put two numbers
       into `Maths.max` and check that the result is the larger of the two
       numbers.
 
-- [ ] Run your test with `npm run test:maths` in your terminal.
+- [x] Run your test with `npm run test:maths` in your terminal.
 
 ## Exercise 2: Arrange, Act, Assert
 
