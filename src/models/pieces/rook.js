@@ -23,8 +23,7 @@ export default class Rook extends Piece {
 
         } else if (board.getPiece(new Square(location.row + idx, location.col))) {
           const occupyingPiece = board.getPiece(new Square(location.row + idx, location.col))
-          console.log(occupyingPiece)
-          if (occupyingPiece.currentPlayer === this.player) {
+          if (occupyingPiece.player === this.player) {
             break
           }
         }
@@ -36,7 +35,6 @@ export default class Rook extends Piece {
 
         } else if (board.getPiece(new Square(location.row - idx, location.col))) {
           const occupyingPiece = board.getPiece(new Square(location.row - idx, location.col))
-          console.log(occupyingPiece)
           if (occupyingPiece.player === this.player) {
             break
           }
