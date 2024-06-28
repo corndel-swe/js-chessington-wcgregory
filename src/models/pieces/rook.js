@@ -15,7 +15,7 @@ export default class Rook extends Piece {
     let moves = []
 
     for (let idx = 1; idx <= 7; idx++) {
-      // Move up the rows, break if space occupied by friendly piece
+      // Move up the rows if square not occupied, break if occupied by friendly piece
       if (location.row + idx <= 7)  {
 
         if (!board.getPiece(new Square(location.row + idx, location.col))) {
@@ -28,7 +28,7 @@ export default class Rook extends Piece {
           }
         }
       }
-      // Move down the rows, break if space occupied by friendly piece
+      // Move down the rows if square not occupied, break if occupied by friendly piece
       if (location.row - idx >= 0) {
         if (!board.getPiece(new Square(location.row - idx, location.col))) {
           moves.push(new Square(location.row - idx, location.col))
@@ -40,7 +40,7 @@ export default class Rook extends Piece {
           }
         }
       }
-      // Move along the columns, to the right, break if space occupied by friendly piece
+      // Move along the columns, to the right, break if square occupied by friendly piece
       if (location.col + idx <= 7) {
         if (!board.getPiece(new Square(location.row, location.col  + idx))) {
           moves.push(new Square(location.row, location.col  + idx))
@@ -52,7 +52,7 @@ export default class Rook extends Piece {
           }
         }
       }
-      // Move along the columns, to the left, break if space occupied by friendly piece
+      // Move along the columns, to the left, break if square occupied by friendly piece
       if (location.col - idx >= 0 ) {
         if (!board.getPiece(new Square(location.row, location.col  - idx))) {
           moves.push(new Square(location.row, location.col  - idx))
