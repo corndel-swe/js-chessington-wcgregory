@@ -12,7 +12,7 @@ describe('The Rectangle class tests', function () {
 		// Assert: Check that the result is the expected area.
     assert.strictEqual(area, 8)
   })
-  it('should return the perimeter of a rectangle using area()', function () {
+  it('should return the perimeter of a rectangle using perimeter()', function () {
 		// Act: Call the `perimeter` method on the `Rectangle`.
     const perimeter = testRectangle.perimeter()
 		// Assert: Check whether the result is the expected perimeter.
