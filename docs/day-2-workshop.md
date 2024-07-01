@@ -9,11 +9,11 @@ The pieces in the folder should all _inherit_ from the `Piece` class.
 
 Your task is to do the following:
 
-- [ ] Make all pieces inherit from the `Piece` class
+- [x] Make all pieces inherit from the `Piece` class
 
-- [ ] Remove any _duplicated_ code from the child classes
+- [x] Remove any _duplicated_ code from the child classes
 
-- [ ] Make sure the tests that _were_ passing before your refactor still pass
+- [x] Make sure the tests that _were_ passing before your refactor still pass
 
 > [!TIP]
 >

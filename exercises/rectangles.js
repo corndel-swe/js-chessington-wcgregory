@@ -24,26 +24,19 @@ export class Rectangle {
   }
 }
 
-export class Square {
-  #side
+export class Square extends Rectangle {
 
   constructor(side) {
-    this.#side = side
+    super(side, side)
   }
 
-  area() {
-    return this.#side * this.#side
-  }
-
-  perimeter() {
-    return 4 * this.#side
-  }
-
-  width() {
-    return this.#side
-  }
-
-  height() {
-    return this.#side
-  }
 }
+
+// const mySquare = new Square(2)
+// console.log(mySquare.area())
+// console.log(mySquare.perimeter())
+// console.log(mySquare.width())
+// console.log(mySquare.height())
+
+// mySquare.side = 3
+// console.log(mySquare.width())

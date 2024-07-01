@@ -38,7 +38,7 @@ describe('King', () => {
     assert.equal(moves.length, 8, '`moves` does not have length 8')
   })
 
-  xit('cannot leave the board', () => {
+  it('cannot leave the board', () => {
     const king = new King(Player.WHITE)
     board.setPiece(new Square(0, 0), king)
 

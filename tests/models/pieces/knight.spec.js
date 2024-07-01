@@ -41,7 +41,7 @@ describe('Knight', () => {
     assert.equal(moves.length, 8, '`moves` does not have length 8')
   })
 
-  xit('can jump over other pieces', () => {
+  it('can jump over other pieces', () => {
     const knight = new Knight(Player.WHITE)
     const firstPawn = new Pawn(Player.WHITE)
     const secondPawn = new Pawn(Player.BLACK)
@@ -57,7 +57,7 @@ describe('Knight', () => {
     )
   })
 
-  xit('cannot leave the board', () => {
+  it('cannot leave the board', () => {
     const knight = new Knight(Player.WHITE)
     board.setPiece(new Square(0, 0), knight)
 

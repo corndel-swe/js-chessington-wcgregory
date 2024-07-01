@@ -14,15 +14,15 @@ To run the tests for this exercise, run `npm run test:d1e1` in your terminal.
 
 Your instructions are to:
 
-- [ ] Open up `exercises/counter.js` and create a new class called `Counter`.
+- [x] Open up `exercises/counter.js` and create a new class called `Counter`.
 
 > [!NOTE]
 >
 > Make sure your class name has a capital `C`
 
-- [ ] Give it a constructor that initialises `count` to `0`
+- [x] Give it a constructor that initialises `count` to `0`
 
-- [ ] Assign the variable `counterInstance` below to an instance of your counter
+- [x] Assign the variable `counterInstance` below to an instance of your counter
       class.
 
 ## Exercise 2: Instance methods
@@ -37,11 +37,11 @@ current count.
 
 Have a go implementing the following methods:
 
-- [ ] `increment()`, which adds one to `count`
+- [x] `increment()`, which adds one to `count`
 
-- [ ] `reset()`, which sets `count` to `0`
+- [x] `reset()`, which sets `count` to `0`
 
-- [ ] `getCount()`, which returns the current `count`
+- [x] `getCount()`, which returns the current `count`
 
 ## Exercise 3: Private properties
 
@@ -50,7 +50,7 @@ Finally, read about
 
 You can run the tests for this exercise using `npm run test:d1e3`.
 
-- [ ] Refactor the `count` property to be private, so that it's hidden from
+- [x] Refactor the `count` property to be private, so that it's hidden from
       outside the class.
 
 ## Extensions
