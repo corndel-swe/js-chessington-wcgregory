@@ -49,7 +49,7 @@ describe('King', () => {
     assert.deepEqual(new Set(moves), new Set(expectedMoves))
   })
 
-  xit('can take opposing pieces', () => {
+  it('can take opposing pieces', () => {
     const king = new King(Player.WHITE)
     const opposingPiece = new Pawn(Player.BLACK)
     board.setPiece(new Square(4, 4), king)
@@ -63,7 +63,7 @@ describe('King', () => {
     )
   })
 
-  xit('cannot take the opposing king', () => {
+  it('cannot take the opposing king', () => {
     const king = new King(Player.WHITE)
     const opposingKing = new King(Player.BLACK)
     board.setPiece(new Square(4, 4), king)
@@ -77,7 +77,7 @@ describe('King', () => {
     )
   })
 
-  xit('cannot take friendly pieces', () => {
+  it('cannot take friendly pieces', () => {
     const king = new King(Player.WHITE)
     const friendlyPiece = new Pawn(Player.WHITE)
     board.setPiece(new Square(4, 4), king)

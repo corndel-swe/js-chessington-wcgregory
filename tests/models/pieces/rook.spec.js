@@ -61,7 +61,7 @@ describe('Rook', () => {
     )
   })
 
-  xit('cannot move through opposing pieces', () => {
+  it('cannot move through opposing pieces', () => {
     const rook = new Rook(Player.WHITE)
     const opposingPiece = new Pawn(Player.BLACK)
     board.setPiece(new Square(4, 4), rook)
@@ -75,7 +75,7 @@ describe('Rook', () => {
     )
   })
 
-  xit('can take opposing pieces', () => {
+  it('can take opposing pieces', () => {
     const rook = new Rook(Player.WHITE)
     const opposingPiece = new Pawn(Player.BLACK)
     board.setPiece(new Square(4, 4), rook)
@@ -89,7 +89,7 @@ describe('Rook', () => {
     )
   })
 
-  xit('cannot take the opposing king', () => {
+  it('cannot take the opposing king', () => {
     const rook = new Rook(Player.WHITE)
     const opposingKing = new King(Player.BLACK)
     board.setPiece(new Square(4, 4), rook)
@@ -103,7 +103,7 @@ describe('Rook', () => {
     )
   })
 
-  xit('cannot take friendly pieces', () => {
+  it('cannot take friendly pieces', () => {
     const rook = new Rook(Player.WHITE)
     const friendlyPiece = new Pawn(Player.WHITE)
     board.setPiece(new Square(4, 4), rook)

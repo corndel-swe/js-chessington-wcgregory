@@ -1,6 +1,7 @@
 import Player from '../player.js'
 import Square from '../square.js'
 import Piece from './piece.js'
+import King from './king.js'
 
 export default class Rook extends Piece {
   constructor(player) {
@@ -9,62 +10,68 @@ export default class Rook extends Piece {
 
   getAvailableMoves(board) {
     // get the square currently occupied by the pawn
-    let location = board.findPiece(this)
+    const location = board.findPiece(this)
     
     // the list of valid moves
-    let moves = []
+    const moves = []
 
     for (let idx = 1; idx <= 7; idx++) {
-      // Move up the rows if square not occupied, break if occupied by friendly piece
+      // squares available in the "north-bound" direction if not occupied, break if occupied by friendly piece
       if (location.row + idx <= 7)  {
+        const northBound = new Square(location.row + idx, location.col)
 
-        if (!board.getPiece(new Square(location.row + idx, location.col))) {
-          moves.push(new Square(location.row + idx, location.col))
+        if (!board.getPiece(northBound)) {
+          moves.push(northBound)
 
-        } else if (board.getPiece(new Square(location.row + idx, location.col))) {
-          const occupyingPiece = board.getPiece(new Square(location.row + idx, location.col))
-          if (occupyingPiece.player === this.player) {
-            break
-          }
+        } else {
+          const occupyingPiece = board.getPiece(northBound)
+          if (occupyingPiece.player !== this.player && !(occupyingPiece instanceof King)) {
+            moves.push(northBound)
+          } break
         }
       }
-      // Move down the rows if square not occupied, break if occupied by friendly piece
-      if (location.row - idx >= 0) {
-        if (!board.getPiece(new Square(location.row - idx, location.col))) {
-          moves.push(new Square(location.row - idx, location.col))
+      // squares available in the "easterly" direction if not occupied, break if occupied by friendly piece
+      if (location.col + idx <= 7)  {
+        const easterly = new Square(location.row, location.col + idx)
 
-        } else if (board.getPiece(new Square(location.row - idx, location.col))) {
-          const occupyingPiece = board.getPiece(new Square(location.row - idx, location.col))
-          if (occupyingPiece.player === this.player) {
-            break
-          }
+        if (!board.getPiece(easterly)) {
+          moves.push(easterly)
+
+        } else {
+          const occupyingPiece = board.getPiece(easterly)
+          if (occupyingPiece.player !== this.player && !(occupyingPiece instanceof King)) {
+            moves.push(easterly)
+          } break
         }
       }
-      // Move along the columns, to the right, break if square occupied by friendly piece
-      if (location.col + idx <= 7) {
-        if (!board.getPiece(new Square(location.row, location.col  + idx))) {
-          moves.push(new Square(location.row, location.col  + idx))
+      // squares available in the "south-bound" direction if not occupied, break if occupied by friendly piece
+      if (location.row - idx >= 0)  {
+        const southBound = new Square(location.row - idx, location.col)
 
-        } else if (board.getPiece(new Square(location.row, location.col + idx))) {
-          const occupyingPiece = board.getPiece(new Square(location.row, location.col  + idx))
-          if (occupyingPiece.player === this.player) {
-            break
-          }
+        if (!board.getPiece(southBound)) {
+          moves.push(southBound)
+
+        } else {
+          const occupyingPiece = board.getPiece(southBound)
+          if (occupyingPiece.player !== this.player && !(occupyingPiece instanceof King)) {
+            moves.push(southBound)
+          } break
         }
       }
-      // Move along the columns, to the left, break if square occupied by friendly piece
-      if (location.col - idx >= 0 ) {
-        if (!board.getPiece(new Square(location.row, location.col  - idx))) {
-          moves.push(new Square(location.row, location.col  - idx))
+      // squares available in the "westerly" direction if not occupied, break if occupied by friendly piece
+      if (location.col - idx >= 0)  {
+        const westerly = new Square(location.row, location.col - idx)
 
-        } else if (board.getPiece(new Square(location.row, location.col - idx))) {
-          const occupyingPiece = board.getPiece(new Square(location.row, location.col  - idx))
-          if (occupyingPiece.player === this.player) {
-            break
-          }
+        if (!board.getPiece(westerly)) {
+          moves.push(westerly)
+
+        } else {
+          const occupyingPiece = board.getPiece(westerly)
+          if (occupyingPiece.player !== this.player && !(occupyingPiece instanceof King)) {
+            moves.push(westerly)
+          } break
         }
       }
-
     }
 
     return moves
