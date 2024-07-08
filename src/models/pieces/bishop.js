@@ -1,6 +1,6 @@
 import Square from '../square.js'
-import King from './king.js'
 import Piece from './piece.js'
+import King from './king.js'
 
 export default class Bishop extends Piece {
 
