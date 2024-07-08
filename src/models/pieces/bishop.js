@@ -13,7 +13,7 @@ export default class Bishop extends Piece {
     let location = board.findPiece(this)
     
     // the list of valid moves
-    let moves = []
+    const moves = Array()
 
     for (let idx = 1; idx <= 7; idx++) {
       // squares available in the "north-east" direction if not occupied, break if occupied by friendly piece
