@@ -1,6 +1,7 @@
 import Square from '../square.js'
 import Player from '../player.js'
 import Piece from './piece.js'
+import King from './king.js'
 
 export default class Pawn extends Piece {
   constructor(player) {
@@ -11,6 +12,8 @@ export default class Pawn extends Piece {
     // get the square currently occupied by the pawn
     let location = board.findPiece(this)
 
+    // possible diagonal move if occupied by opposition piece
+    const diagonalMove = Array()
     // the list of valid moves
     const moves = Array()
 
@@ -23,7 +26,7 @@ export default class Pawn extends Piece {
         ) {
           moves.push(new Square(location.row + 1, location.col))
           moves.push(new Square(location.row + 2, location.col))
-        
+          
         } else if (!board.getPiece(new Square(location.row + 1, location.col))) {
           moves.push(new Square(location.row + 1, location.col))
         }
@@ -32,6 +35,21 @@ export default class Pawn extends Piece {
         
         if (!board.getPiece(new Square(location.row + 1, location.col))) {
           moves.push(new Square(location.row + 1, location.col))
+        }
+      }
+      // can move diagonally up if there is an opposite piece, except the opposing king
+      if (location.row < 7 && location.col < 7) {  // up-right
+        diagonalMove.push(new Square(location.row + 1, location.col + 1))
+      }
+      if (location.row < 7 && location.col > 0) {  // up-left
+        diagonalMove.push(new Square(location.row + 1, location.col - 1))
+      }
+      for (let move of diagonalMove) {
+        if (board.getPiece(move)) {
+          const occupyingPiece = board.getPiece(move)
+          if (occupyingPiece.player !== this.player && !(occupyingPiece instanceof King)) {
+            moves.push(move)
+          }
         }
       }
     // this.player !== player.WHITE
@@ -54,6 +72,21 @@ export default class Pawn extends Piece {
 
         if (!board.getPiece(new Square(location.row - 1, location.col))) {  
           moves.push(new Square(location.row - 1, location.col))
+        }
+      }
+      // can move diagonally down if there is an opposite piece, except the opposing king
+      if (location.row > 0 && location.col < 7) {  // down-right
+        diagonalMove.push(new Square(location.row - 1, location.col + 1))
+      }
+      if (location.row > 0 && location.col > 0) {  // down-left
+        diagonalMove.push(new Square(location.row - 1, location.col - 1))
+      }
+      for (let move of diagonalMove) {
+        if (board.getPiece(move)) {
+          const occupyingPiece = board.getPiece(move)
+          if (occupyingPiece.player !== this.player && !(occupyingPiece instanceof King)) {
+            moves.push(move)
+          }
         }
       }
     }
