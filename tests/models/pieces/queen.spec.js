@@ -35,7 +35,7 @@ describe('Queen', () => {
     ]
 
     //assert.equal(new Set(moves), new Set(expectedMoves))
-    expectedMoves.every((move) => moves.includes(move))
+    expectedMoves.every(move => moves.includes(move))
   })
 
 	it('can move laterally, i.e. up, down, left, right', () => {
@@ -64,7 +64,7 @@ describe('Queen', () => {
     ]
 
     //assert.equal(new Set(moves), new Set(expectedMoves))
-    expectedMoves.every((move) => moves.includes(move))
+    expectedMoves.every(move => moves.includes(move))
   })
 
   it('cannot make any other moves', () => {
